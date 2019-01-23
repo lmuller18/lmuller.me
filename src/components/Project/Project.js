@@ -11,7 +11,10 @@ class Project extends React.Component {
     return (
       <React.Fragment>
         <h1 style={{ color: `${this.props.theme.fontColor}` }}>{title}</h1>
-        <div style={{ color: `${this.props.theme.fontColor}` }}>
+        <div
+          class="markdown"
+          style={{ color: `${this.props.theme.fontColor}` }}
+        >
           <ReactMarkdown escapeHtml={false} source={description} />
         </div>
       </React.Fragment>
