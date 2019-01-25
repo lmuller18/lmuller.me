@@ -32,11 +32,11 @@ class App extends Component {
         </span>
         <span>
           <a href={url}>
-            <span className="o">
-              `{short}<span className="b">${'{'}</span>
-      <span className="l">usr</span>
-              <span className="b">{'}'}`</span>
-            </span>
+            <span className="o">`{short}/</span>
+            <span className="b">${'{'}</span>
+            <span className="l">usr</span>
+            <span className="b">{'}'}</span>
+            <span className="o">`</span>
           </a>
           <span className="w">;</span>
         </span>

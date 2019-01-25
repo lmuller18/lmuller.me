@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './containers/App/App';
-import AnimationExample from './containers/Routing/Test';
 import * as serviceWorker from './serviceWorker';
 
 // ReactDOM.render(<AnimationExample />, document.getElementById('root'));

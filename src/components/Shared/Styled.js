@@ -15,10 +15,12 @@ const StyledLink = styled(NavLink).attrs({
 
   transition: all 0.25s ease-in-out;
 
-  &:hover {
-    font-weight: bold;
-    background-color: ${props => props.theme.fontColor};
-    color: ${props => props.theme.backgroundColor};
+  @media (hover: hover) {
+    &:hover {
+      font-weight: bold;
+      background-color: ${props => props.theme.fontColor};
+      color: ${props => props.theme.backgroundColor};
+    }
   }
 
   &.${activeClassName} {
