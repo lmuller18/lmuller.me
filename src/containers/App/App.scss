@@ -2,6 +2,17 @@ body {
   margin: 0;
 }
 
+* {
+  box-sizing: border-box;
+}
+
+.content {
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1rem;
+}
+
 .particles-container {
   position: fixed;
   top: 0;
@@ -33,4 +44,20 @@ body {
   align-items: center;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
+}
+
+.link-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1rem;
+}
+
+.fade-enter {
+  opacity: 0;
+  z-index: 1;
+}
+
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transition: opacity 250ms ease-in;
 }
