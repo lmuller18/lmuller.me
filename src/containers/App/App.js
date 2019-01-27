@@ -158,6 +158,10 @@ class App extends Component {
                     path="/resume"
                     render={() => <Resume theme={this.state.theme} />}
                   />
+                  <p style={{ color: this.state.theme.fontColor }}>
+                    Built with React, React-Router, Styled-Components,
+                    Contentful, and 💖
+                  </p>
                 </div>
               </div>
             </Router>
