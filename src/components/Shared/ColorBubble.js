@@ -1,23 +1,19 @@
 import React from 'react';
 import './ColorBubble.scss';
 
-class ColorBubble extends React.Component {
-  changeTheme = () => {
-    this.props.changeTheme(this.props.theme);
-  };
-
-  render = () => {
-    return (
-      <div
-        onClick={this.changeTheme}
-        className="colorBubble"
-        style={{
-          backgroundColor: this.props.theme.backgroundColor,
-          border: `2px solid ${this.props.theme.fontColor}`
-        }}
-      />
-    );
-  };
+function changeTheme(props) {
+  props.changeTheme(props.theme);
 }
 
-export default ColorBubble;
+export default function ColorBubble(props) {
+  return (
+    <div
+      onClick={() => changeTheme(props)}
+      className="colorBubble"
+      style={{
+        backgroundColor: props.theme.backgroundColor,
+        border: `2px solid ${props.theme.fontColor}`
+      }}
+    />
+  );
+}
