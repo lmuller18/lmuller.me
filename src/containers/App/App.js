@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Particles from 'react-particles-js';
 import { ThemeProvider } from 'styled-components';
 import { ThemeParticles } from '../../components/Shared/Util';
@@ -45,6 +45,9 @@ class App extends Component {
   };
 
   renderCall = (usr, platform, url) => {
+    // declare comment to avoid eslint warning
+    // about '//' in jsx
+    const comment = `// ${url}`;
     return (
       <h1>
         <span>
@@ -61,47 +64,40 @@ class App extends Component {
         </span>
         <br />
         <a href={url}>
-          <span className="c">// {url}</span>
+          <span className="c">{comment}</span>
         </a>
       </h1>
     );
   };
 
   renderMainContent = () => {
+    const contact = [
+      {
+        platform: 'twitter',
+        short: 'twitter.com',
+        usr: 'lmuller18',
+        url: 'https://twitter.com/lmuller18'
+      },
+      {
+        platform: 'linkedin',
+        short: 'linkedin.com/in',
+        usr: 'liammuller',
+        url: 'https://www.linkedin.com/in/liammuller/'
+      },
+      {
+        platform: 'github',
+        short: 'github.com',
+        usr: 'lmuller18',
+        url: 'https://github.com/lmuller18'
+      }
+    ];
+
     return (
       <div className="main-content">
         <div className="contact">
-          {this.renderFunc(
-            'twitter',
-            'twitter.com',
-            'https://twitter.com/lmuller18'
-          )}
-          {this.renderFunc(
-            'linkedin',
-            'linkedin.com/in',
-            'https://www.linkedin.com/in/liammuller/'
-          )}
-          {this.renderFunc(
-            'github',
-            'github.com',
-            'https://github.com/lmuller18'
-          )}
+          {contact.map(c => this.renderFunc(c.platform, c.short, c.url))}
 
-          {this.renderCall(
-            'lmuller18',
-            'twitter',
-            'https://twitter.com/lmuller18'
-          )}
-          {this.renderCall(
-            'liammuller',
-            'linkedin',
-            'https://www.linkedin.com/in/liammuller/'
-          )}
-          {this.renderCall(
-            'lmuller18',
-            'github',
-            'https://github.com/lmuller18'
-          )}
+          {contact.map(c => this.renderCall(c.usr, c.platform, c.url))}
         </div>
       </div>
     );
@@ -161,7 +157,10 @@ class App extends Component {
                   <hr />
                   <p style={{ color: this.state.theme.fontColor }}>
                     Built with React, React-Router, Styled-Components,
-                    Contentful, and 💖
+                    Contentful, and{' '}
+                    <span role="img" aria-label="love">
+                      💖
+                    </span>
                   </p>
                 </div>
               </div>

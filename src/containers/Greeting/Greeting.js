@@ -17,7 +17,7 @@ class Greeting extends React.Component {
           id="profile-pic"
           style={{ border: `2px solid ${this.props.theme.fontColor}` }}
           src={require('./profile-pic.jpg')}
-          alt="Profile Picture"
+          alt="Profile"
           width="100"
           height="100"
         />

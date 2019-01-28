@@ -2,10 +2,6 @@ import React from 'react';
 import './ColorBubble.scss';
 
 class ColorBubble extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   changeTheme = () => {
     this.props.changeTheme(this.props.theme);
   };
