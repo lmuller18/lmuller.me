@@ -1,18 +1,11 @@
 import React from 'react';
+import styled from 'styled-components';
 import './Greeting.scss';
 
 class Greeting extends React.Component {
   render = () => {
     return (
-      <div
-        style={{
-          color: `${this.props.theme.fontColor}`,
-          display: 'flex',
-          alignItems: 'center',
-          flexWrap: 'wrap',
-          justifyContent: 'center'
-        }}
-      >
+      <StyledGreeting color={this.props.theme.fontColor}>
         <img
           id="profile-pic"
           style={{ border: `2px solid ${this.props.theme.fontColor}` }}
@@ -30,9 +23,17 @@ class Greeting extends React.Component {
             student with a passion for web development.
           </p>
         </div>
-      </div>
+      </StyledGreeting>
     );
   };
 }
+
+const StyledGreeting = styled.div`
+  color: ${props => props.color};
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+`;
 
 export default Greeting;

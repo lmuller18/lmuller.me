@@ -39,4 +39,12 @@ const StyledSubLink = styled(StyledLink).attrs({
   }
 `;
 
-export { StyledLink, StyledSubLink };
+const Header1 = styled.h1`
+  color: ${props => props.color}
+`;
+
+const Paragraph = styled.p`
+  color: ${props => props.color}
+`;
+
+export { StyledLink, StyledSubLink, Header1, Paragraph };

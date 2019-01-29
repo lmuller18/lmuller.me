@@ -1,11 +1,11 @@
 import React from 'react';
 import './ColorBubble.scss';
 
-function changeTheme(props) {
+const changeTheme = props => {
   props.changeTheme(props.theme);
 }
 
-export default function ColorBubble(props) {
+const ColorBubble = props => {
   return (
     <div
       onClick={() => changeTheme(props)}
@@ -17,3 +17,5 @@ export default function ColorBubble(props) {
     />
   );
 }
+
+export default ColorBubble;

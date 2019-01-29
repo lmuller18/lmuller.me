@@ -3,32 +3,27 @@ import ReactMarkdown from 'react-markdown/with-html';
 import styled from 'styled-components';
 import './Project.scss';
 import CodeBlock from './code-block';
-class Project extends React.Component {
-  render = () => {
-    const { title, description } = this.props.fields;
-    return (
-      <div>
-        <h1 style={{ color: `${this.props.theme.colors[3]}` }}>{title}</h1>
-        <div
-          style={{
-            color: `${this.props.theme.fontColor}`,
-            h1: { color: `white` }
-          }}
-        >
-          <MarkdownStyles theme={this.props.theme}>
-            <ReactMarkdown
-              escapeHtml={false}
-              source={description}
-              renderers={{ code: CodeBlock }}
-            />
-          </MarkdownStyles>
-        </div>
-      </div>
-    );
-  };
+import { Header1 } from '../Shared/Styled';
+
+const Project = props => {
+  const { title, description } = props.fields;
+  return (
+    <div>
+      <Header1 color={props.theme.colors[3]}>{title}</Header1>
+      <MarkdownStyles theme={props.theme}>
+        <ReactMarkdown
+          escapeHtml={false}
+          source={description}
+          renderers={{ code: CodeBlock }}
+        />
+      </MarkdownStyles>
+    </div>
+  );
 }
 
 const MarkdownStyles = styled.div`
+  color: ${props => props.theme.fontColor};
+
   & a {
     text-decoration: none;
     text-underline: none;
