@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { StyledSubLink } from '../../components/Shared/Styled';
 import ReactMarkdown from 'react-markdown/with-html';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import * as contentful from 'contentful';
@@ -41,6 +42,9 @@ class Resume extends React.Component {
       <TransitionGroup>
         <CSSTransition classNames="fade" timeout={300}>
           <StyledResume theme={this.props.theme}>
+            <DownloadContainer>
+              <StyledSubLink as="a" href="/resume.pdf" theme={this.props.theme}>Download</StyledSubLink>
+            </DownloadContainer>
             <ReactMarkdown escapeHtml={false} source={this.state.resume} />
           </StyledResume>
         </CSSTransition>
@@ -48,6 +52,11 @@ class Resume extends React.Component {
     );
   };
 }
+
+const DownloadContainer = styled.div`
+  display: flex;
+  justify-content: center;
+`;
 
 const StyledResume = styled.div`
   * {
