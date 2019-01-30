@@ -19,7 +19,7 @@ const Project = props => {
       </MarkdownStyles>
     </div>
   );
-}
+};
 
 const MarkdownStyles = styled.div`
   color: ${props => props.theme.fontColor};
@@ -38,6 +38,15 @@ const MarkdownStyles = styled.div`
   & img {
     max-height: 380px;
     width: auto;
+  }
+
+  & details p {
+    display: flex;
+    justify-content: center;
+  }
+
+  & summary {
+    cursor: pointer;
   }
 `;
 
