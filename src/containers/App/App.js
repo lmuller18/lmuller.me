@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Particles from 'react-particles-js';
+import styled from 'styled-components';
 import { ThemeProvider } from 'styled-components';
 import { ThemeParticles } from '../../components/Shared/Util';
 import { StyledLink, Paragraph } from '../../components/Shared/Styled';
-import { themes } from '../../components/Shared/Shared';
+import { themes, hexToRGB } from '../../components/Shared/Shared';
 import ThemePicker from '../../components/ThemePicker/ThemePicker';
 import Greeting from '../Greeting/Greeting';
 import Projects from '../Projects/Projects';
+import Updates from '../Updates/Updates';
 import Resume from '../Resume/Resume';
 import ContactInfo from '../../components/ContactInfo/ContactInfo';
 import './App.scss';
@@ -15,12 +17,18 @@ import './App.scss';
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { theme: themes[0], themes };
+    this.state = { theme: themes[0], themes, showUpdates: false };
   }
 
   changeTheme = theme => {
     this.setState({
       theme: theme
+    });
+  };
+
+  toggleUpdates = showUpdates => {
+    this.setState({
+      showUpdates
     });
   };
 
@@ -62,11 +70,7 @@ class App extends Component {
                 </div>
                 <hr />
                 <div className="main">
-                  <Route
-                    exact
-                    path="/"
-                    render={() => <ContactInfo />}
-                  />
+                  <Route exact path="/" render={() => <ContactInfo />} />
                   <Route
                     path="/projects"
                     render={() => <Projects theme={this.state.theme} />}
@@ -82,7 +86,34 @@ class App extends Component {
                     <span role="img" aria-label="love">
                       💖
                     </span>
+                    .
                   </Paragraph>
+                  <Paragraph as="div" color={this.state.theme.fontColor}>
+                    View Updates{' '}
+                    <UpdatesLink onClick={() => this.toggleUpdates(true)}>
+                      Here
+                    </UpdatesLink>
+                  </Paragraph>
+                  {this.state.showUpdates && (
+                    <UpdatesContainer theme={this.state.theme}>
+                      <div
+                        style={{
+                          display: 'flex',
+                          justifyContent: 'space-between',
+                          alignItems: 'center'
+                        }}
+                      >
+                        <h1>Updates</h1>
+                        <CloseUpdates
+                          as="div"
+                          onClick={() => this.toggleUpdates(false)}
+                        >
+                          Close
+                        </CloseUpdates>
+                      </div>
+                      <Updates />
+                    </UpdatesContainer>
+                  )}
                 </div>
               </div>
             </Router>
@@ -92,5 +123,29 @@ class App extends Component {
     );
   }
 }
+
+const CloseUpdates = styled(StyledLink)`
+  cursor: pointer;
+`;
+
+const UpdatesLink = styled.span`
+  font-weight: bold;
+  text-decoration: underline;
+  cursor: pointer;
+`;
+
+const UpdatesContainer = styled.div`
+  position: absolute;
+  background-color: ${props => hexToRGB(props.theme.backgroundColor, 0.85)};
+  color: ${props => props.theme.fontColor};
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  border: 2px solid ${props => props.theme.fontColor};
+  padding: 1rem;
+  height: calc(100vh - 190px);
+  top: 190px;
+  left: 0;
+  overflow-y: hidden;
+`;
 
 export default App;

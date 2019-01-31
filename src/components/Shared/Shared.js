@@ -21,9 +21,27 @@ const themes = [
   {
     backgroundColor: '#1C1C1C',
     fontColor: '#DADDD8',
-    colors: ['#FFF8F0', '#FFF8F0', '#FFF8F0', '#FFF8F0'],
+    colors: ['#DADDD8', '#DADDD8', '#DADDD8', '#DADDD8'],
     particleColor: '#D33F49'
+  },
+  {
+    backgroundColor: '#0C2231',
+    fontColor: '#A5AED5',
+    colors: ['#A5AED5', '#A5AED5', '#A5AED5', '#A5AED5'],
+    particleColor: '#276D9B'
   }
 ];
 
-export { themes };
+const hexToRGB = (hex, alpha) => {
+  var r = parseInt(hex.slice(1, 3), 16),
+    g = parseInt(hex.slice(3, 5), 16),
+    b = parseInt(hex.slice(5, 7), 16);
+
+  if (alpha) {
+    return 'rgba(' + r + ', ' + g + ', ' + b + ', ' + alpha + ')';
+  } else {
+    return 'rgb(' + r + ', ' + g + ', ' + b + ')';
+  }
+};
+
+export { themes, hexToRGB };
