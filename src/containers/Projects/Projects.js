@@ -9,6 +9,7 @@ import {
 } from 'react-router-dom';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import { StyledSubLink } from '../../components/Shared/Styled';
+import { initAnalytics } from '../../components/Shared/Analytics';
 
 import Project from '../../components/Project/Project';
 
@@ -24,6 +25,8 @@ class Projects extends React.Component {
       accessToken:
         '2fda784da23b9ec886c5db80b7b843fc207939df9fd684c8541d4280bca03eec'
     });
+
+    initAnalytics('projects');
   }
 
   componentDidMount = () => {

@@ -1,7 +1,13 @@
 import React from 'react';
+import { initAnalytics } from '../../components/Shared/Analytics';
 import "./ContactInfo.scss";
 
 class ContactInfo extends React.Component {
+  constructor(props) {
+    super(props);
+    initAnalytics('homepage');
+  }
+
   renderFunc = (platform, short, url) => {
     return (
       <h1 key={platform}>

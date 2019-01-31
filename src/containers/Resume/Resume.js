@@ -1,9 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-import { StyledSubLink } from '../../components/Shared/Styled';
+import { initAnalytics, logEvent } from '../../components/Shared/Analytics';
 import ReactMarkdown from 'react-markdown/with-html';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import * as contentful from 'contentful';
+import { Link } from 'react-router-dom';
 
 class Resume extends React.Component {
   constructor(props) {
@@ -17,6 +18,8 @@ class Resume extends React.Component {
       accessToken:
         '2fda784da23b9ec886c5db80b7b843fc207939df9fd684c8541d4280bca03eec'
     });
+
+    initAnalytics('resume');
   }
 
   componentDidMount = () => {
@@ -43,7 +46,7 @@ class Resume extends React.Component {
         <CSSTransition classNames="fade" timeout={300}>
           <StyledResume theme={this.props.theme}>
             <DownloadContainer>
-              <StyledSubLink as="a" href="/resume.pdf" theme={this.props.theme}>Download</StyledSubLink>
+              <DownloadLink to="/resume.pdf" target="_blank" theme={this.props.theme} onClick={(event) => this.toResume}>Download</DownloadLink>
             </DownloadContainer>
             <ReactMarkdown escapeHtml={false} source={this.state.resume} />
           </StyledResume>
@@ -51,7 +54,33 @@ class Resume extends React.Component {
       </TransitionGroup>
     );
   };
+
+  toResume = event => {
+    event.preventDefault();
+    logEvent('Resume', 'Download Resume')
+    window.open(this.makeHref("/resume.pdf"))
+  }
 }
+
+const DownloadLink = styled(Link)`
+  text-decoration: none;
+  color: ${props => props.theme.colors[2]};
+  border-radius: 5%;
+  text-align: center;
+  width: ${props => props.width || '6rem'};
+  padding: 0.5rem;
+
+  transition: all 0.25s ease-in-out;
+
+  @media (hover: hover) {
+    &:hover {
+      font-weight: bold;
+      background-color: ${props => props.theme.fontColor};
+      color: ${props => props.theme.backgroundColor};
+    }
+  }
+    cursor: pointer;
+`;
 
 const DownloadContainer = styled.div`
   display: flex;
