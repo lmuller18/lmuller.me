@@ -1,17 +1,16 @@
 body {
   margin: 0;
-  height: 100vh;
 }
 
 * {
   box-sizing: border-box;
-
+  scroll-behavior: smooth;
   transition: color 0.25s ease-in-out, border 0.25s ease-in-out;
 }
 
 .content {
   max-width: 740px;
-  margin: 1rem auto 5rem auto;
+  margin: 1rem auto 1rem auto;
 }
 
 .particles-container {
@@ -69,6 +68,7 @@ a {
 }
 
 .main {
+  position: relative;
   padding: 0 1rem;
 }
 
@@ -79,4 +79,22 @@ a {
   @media screen and (max-width: 319px) {
     display: none;
   }
+}
+
+.slow-fade-enter {
+  opacity: 0.01;
+}
+
+.slow-fade-enter.slow-fade-enter-active {
+  opacity: 1;
+  transition: opacity 300ms ease-in;
+}
+
+.slow-fade-leave {
+  opacity: 1;
+}
+
+.slow-fade-leave.slow-fade-leave-active {
+  opacity: 0.01;
+  transition: opacity 200ms ease-in;
 }

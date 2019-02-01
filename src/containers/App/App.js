@@ -11,6 +11,7 @@ import Greeting from '../Greeting/Greeting';
 import Projects from '../Projects/Projects';
 import Updates from '../Updates/Updates';
 import Resume from '../Resume/Resume';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import ContactInfo from '../../components/ContactInfo/ContactInfo';
 import './App.scss';
 
@@ -27,6 +28,7 @@ class App extends Component {
   };
 
   toggleUpdates = showUpdates => {
+    window.scrollTo(0, 0);
     this.setState({
       showUpdates
     });
@@ -94,26 +96,32 @@ class App extends Component {
                       Here
                     </UpdatesLink>
                   </Paragraph>
-                  {this.state.showUpdates && (
-                    <UpdatesContainer theme={this.state.theme}>
-                      <div
-                        style={{
-                          display: 'flex',
-                          justifyContent: 'space-between',
-                          alignItems: 'center'
-                        }}
-                      >
-                        <h1>Updates</h1>
-                        <CloseUpdates
-                          as="div"
-                          onClick={() => this.toggleUpdates(false)}
+                  <ReactCSSTransitionGroup
+                    transitionName="slow-fade"
+                    transitionEnterTimeout={300}
+                    transitionLeaveTimeout={200}
+                  >
+                    {this.state.showUpdates && (
+                      <UpdatesContainer theme={this.state.theme}>
+                        <div
+                          style={{
+                            display: 'flex',
+                            justifyContent: 'space-between',
+                            alignItems: 'center'
+                          }}
                         >
-                          Close
-                        </CloseUpdates>
-                      </div>
-                      <Updates />
-                    </UpdatesContainer>
-                  )}
+                          <h1>Updates</h1>
+                          <CloseUpdates
+                            as="div"
+                            onClick={() => this.toggleUpdates(false)}
+                          >
+                            Close
+                          </CloseUpdates>
+                        </div>
+                        <Updates theme={this.state.theme} />
+                      </UpdatesContainer>
+                    )}
+                  </ReactCSSTransitionGroup>
                 </div>
               </div>
             </Router>
@@ -135,17 +143,21 @@ const UpdatesLink = styled.span`
 `;
 
 const UpdatesContainer = styled.div`
-  position: absolute;
-  background-color: ${props => hexToRGB(props.theme.backgroundColor, 0.85)};
+  max-width: 740px;
+  margin: 0 auto;
+
+  position: fixed;
+  background-color: ${props => hexToRGB(props.theme.backgroundColor, 0.95)};
   color: ${props => props.theme.fontColor};
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
   border: 2px solid ${props => props.theme.fontColor};
   padding: 1rem;
-  height: calc(100vh - 190px);
   top: 190px;
   left: 0;
-  overflow-y: hidden;
+  right: 0;
+  bottom: 0;
+  overflow-y: auto;
 `;
 
 export default App;

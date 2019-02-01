@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import styled from 'styled-components';
 
 class Updates extends Component {
   constructor(props) {
@@ -12,7 +13,6 @@ class Updates extends Component {
     fetch('https://api.github.com/repos/lmuller18/dark-amazon/commits')
       .then(results => results.json())
       .then(data => {
-        console.log(data);
         this.setState({ updates: data });
       });
   }
@@ -23,15 +23,51 @@ class Updates extends Component {
         {this.state.updates &&
           this.state.updates.map(c => {
             return (
-              <div key={c.sha}>
-                <div>{c.commit.author.name}</div>
-                <div>{c.commit.message}</div>
-              </div>
+              <CommitWrapper key={c.sha} href={c.html_url} target="_blank">
+                <Avatar
+                  src={c.author.avatar_url}
+                  color={this.props.theme.fontColor}
+                  height="50"
+                  width="50"
+                />
+                <div>
+                  <Author theme={this.props.theme}>{c.author.login}</Author>
+                  <Message>{c.commit.message}</Message>
+                </div>
+              </CommitWrapper>
             );
           })}
       </div>
     );
   };
 }
+
+const Author = styled.h4`
+  color: ${props => props.theme.colors[1]};
+  margin: 0;
+`;
+
+const Message = styled.h5`
+  margin: 0;
+`;
+
+const Avatar = styled.img`
+  border-radius: 50%;
+  border: 2px solid ${props => props.color};
+  margin-right: 1rem;
+  min-width: 50px;
+`;
+
+const CommitWrapper = styled.a`
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid grey;
+  padding: 1rem 0;
+  cursor: pointer;
+
+  &:last-child {
+    border-bottom: unset;
+  }
+`;
 
 export default Updates;
