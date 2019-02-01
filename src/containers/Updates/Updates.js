@@ -30,8 +30,13 @@ class Updates extends Component {
                   height="50"
                   width="50"
                 />
-                <div>
-                  <Author theme={this.props.theme}>{c.author.login}</Author>
+                <div style={{ width: '100%' }}>
+                  <CommitHeader>
+                    <Author theme={this.props.theme}>{c.author.login}</Author>
+                    <CommitDate theme={this.props.theme}>
+                      {new Date(c.commit.author.date).toDateString()}
+                    </CommitDate>
+                  </CommitHeader>
                   <Message>{c.commit.message}</Message>
                 </div>
               </CommitWrapper>
@@ -42,9 +47,20 @@ class Updates extends Component {
   };
 }
 
+const CommitHeader = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`;
+
 const Author = styled.h4`
   color: ${props => props.theme.colors[1]};
   margin: 0;
+`;
+
+const CommitDate = styled.h6`
+  color: ${props => props.theme.colors[1]};
+  margin: 0 0 0 1rem;
 `;
 
 const Message = styled.h5`
