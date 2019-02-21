@@ -21,9 +21,8 @@ class Projects extends React.Component {
     };
 
     this.client = contentful.createClient({
-      space: 'k2rcyybgppgm',
-      accessToken:
-        '2fda784da23b9ec886c5db80b7b843fc207939df9fd684c8541d4280bca03eec'
+      space: process.env.REACT_APP_CONTENTFUL_SPACE,
+      accessToken: process.env.REACT_APP_CONTENTFUL_ACCESS_KEY
     });
 
     initAnalytics('projects');

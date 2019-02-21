@@ -14,9 +14,8 @@ class Resume extends React.Component {
     };
 
     this.client = contentful.createClient({
-      space: 'k2rcyybgppgm',
-      accessToken:
-        '2fda784da23b9ec886c5db80b7b843fc207939df9fd684c8541d4280bca03eec'
+      space: process.env.REACT_APP_CONTENTFUL_SPACE,
+      accessToken: process.env.REACT_APP_CONTENTFUL_ACCESS_KEY
     });
 
     initAnalytics('resume');
@@ -46,7 +45,14 @@ class Resume extends React.Component {
         <CSSTransition classNames="fade" timeout={300}>
           <StyledResume theme={this.props.theme}>
             <DownloadContainer>
-              <DownloadLink to="/resume.pdf" target="_blank" theme={this.props.theme} onClick={(event) => this.toResume}>Download</DownloadLink>
+              <DownloadLink
+                to="/resume.pdf"
+                target="_blank"
+                theme={this.props.theme}
+                onClick={event => this.toResume}
+              >
+                Download
+              </DownloadLink>
             </DownloadContainer>
             <ReactMarkdown escapeHtml={false} source={this.state.resume} />
           </StyledResume>
@@ -57,9 +63,9 @@ class Resume extends React.Component {
 
   toResume = event => {
     event.preventDefault();
-    logEvent('Resume', 'Download Resume')
-    window.open(this.makeHref("/resume.pdf"))
-  }
+    logEvent('Resume', 'Download Resume');
+    window.open(this.makeHref('/resume.pdf'));
+  };
 }
 
 const DownloadLink = styled(Link)`
@@ -79,7 +85,7 @@ const DownloadLink = styled(Link)`
       color: ${props => props.theme.backgroundColor};
     }
   }
-    cursor: pointer;
+  cursor: pointer;
 `;
 
 const DownloadContainer = styled.div`
