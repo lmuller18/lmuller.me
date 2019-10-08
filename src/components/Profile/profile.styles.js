@@ -1,3 +1,4 @@
+import React from "react"
 import styled from "styled-components"
 
 const Profile = styled.div`
@@ -36,17 +37,28 @@ const Key = styled.span`
 
 const Value = styled.span``
 
-const Image = styled.img`
-  display: block;
+const Image = ({ src }) => (
+  <ImageContainer>
+    <StyledImage src={src} />
+  </ImageContainer>
+)
+
+const ImageContainer = styled.div`
   overflow: hidden;
   background-color: #010c1f;
   border: 4px solid #010c1f;
-  width: auto;
-  height: auto;
+  width: 300px;
+  height: 300px;
   border-radius: 200px;
   max-width: 220px;
   max-height: 220px;
   margin-right: 20px;
+`
+
+const StyledImage = styled.img`
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 `
 
 const Social = styled.div`
