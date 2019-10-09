@@ -3,7 +3,7 @@ import React from "react"
 import * as L from "layout-styled-components"
 
 import Profile from "./../Profile"
-import { Spacer } from "./../Shared"
+import Spacer from "./../../elements/Spacer"
 
 const Header = ({ name, description, attributes }) => (
   <L.Vertical>

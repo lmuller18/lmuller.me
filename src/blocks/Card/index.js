@@ -9,4 +9,15 @@ const Card = styled.div`
   width: 1216px;
 `
 
+const Profile = styled(Card)`
+  display: flex;
+  flex-direction: row;
+
+  @media screen and (max-width: 620px) {
+    flex-direction: column;
+  }
+`
+
+Card.Profile = Profile
+
 export default Card
