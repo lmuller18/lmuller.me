@@ -2,7 +2,7 @@ import styled from "styled-components"
 
 const Experience = styled.div`
   flex-basis: 30%;
-  border-left: 1px solid white;
+  border-left: 2px solid white;
   padding-left: 1rem;
   padding-right: 1rem;
 

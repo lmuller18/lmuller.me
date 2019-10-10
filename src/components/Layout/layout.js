@@ -41,9 +41,7 @@ const Layout = ({ children }) => {
       <main>
         <L.Vertical>
           <Spacer height={20} />
-          <L.Horizontal center>
-            <Card>{children}</Card>
-          </L.Horizontal>
+          {children}
         </L.Vertical>
       </main>
       <footer>

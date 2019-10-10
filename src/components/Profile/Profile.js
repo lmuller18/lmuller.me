@@ -10,7 +10,7 @@ import Typography from "./../../elements/Typography"
 
 import useMobileDetection from "./../Shared/hooks/useMobileDetection"
 
-import profilePic from "./../../images/avataaars_no_backdrop.png"
+import profilePic from "./../../images/avataaars_happy_no_backdrop.png"
 
 const Profile = ({ name, description, attributes }) => {
   const isMobile = useMobileDetection()
