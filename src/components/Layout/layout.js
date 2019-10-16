@@ -14,6 +14,7 @@ import Spacer from "./../../elements/Spacer"
 import * as L from "layout-styled-components"
 import Card from "./../../blocks/Card"
 import Header from "./../Header"
+import theme from "./../Shared/theme"
 import "./layout.css"
 
 const Layout = ({ children }) => {
@@ -35,7 +36,7 @@ const Layout = ({ children }) => {
   const { name, description, attributes } = data.site.siteMetadata
 
   return (
-    <ThemeProvider theme={{}}>
+    <ThemeProvider theme={theme}>
       <Header name={name} description={description} attributes={attributes} />
 
       <main>

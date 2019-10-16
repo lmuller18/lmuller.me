@@ -200,7 +200,8 @@ html {
 }
 body {
   color: #ffffff;
-  background-color: #0d1219;
+  background-color: #312c3d;
+  /* background-color: #0d1219; */
   font-family: georgia, serif;
   font-weight: normal;
   word-wrap: break-word;
