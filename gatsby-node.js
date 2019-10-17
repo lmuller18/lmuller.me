@@ -3,8 +3,8 @@
  *
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
+const path = require(`path`)
 
-// You can delete this file if you're not using it
 exports.onCreateWebpackConfig = ({ stage, actions }) => {
   if (stage.startsWith("develop")) {
     actions.setWebpackConfig({
@@ -16,3 +16,29 @@ exports.onCreateWebpackConfig = ({ stage, actions }) => {
     })
   }
 }
+
+// exports.createPages = ({ graphql, actions }) => {
+//   const { createPage } = actions
+//   return graphql(`
+//     {
+//       allContentfulProject {
+//         edges {
+//           node {
+//             name
+//           }
+//         }
+//       }
+//     }
+//   `).then(result => {
+//     result.data.allContentfulProject.edges.forEach(({ node }) => {
+//       const slug = node.name.toLowerCase().replace(/ /g, "-")
+//       createPage({
+//         path: slug,
+//         component: path.resolve(`./src/templates/project.js`),
+//         context: {
+//           name: node.name,
+//         },
+//       })
+//     })
+//   })
+// }
