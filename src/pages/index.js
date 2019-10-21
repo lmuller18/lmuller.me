@@ -8,6 +8,7 @@ import Typography from "../elements/Typography"
 import Card from "./../blocks/Card"
 import MediaCard from "./../components/Shared/MediaCard"
 import Spacer from "../elements/Spacer"
+import raidr from "./../images/raidr.png"
 
 const IndexPage = () => (
   <L.Vertical center>
@@ -37,7 +38,7 @@ const Projects = () => {
               shortDescription
             }
             preview {
-              fluid(maxHeight: 300) {
+              fluid(maxHeight: 800) {
                 src
               }
             }
@@ -58,11 +59,16 @@ const Projects = () => {
   }))
 
   return (
-    <L.Horizontal center fullW spaceBetween wrap style={{ marginTop: -10 }}>
+    <L.Horizontal
+      center
+      fullW
+      spaceBetween
+      wrap
+      style={{ marginTop: -10, marginRight: -10 }}
+    >
       {projects.map((p, i) => (
-        <Project>
+        <Project key={i}>
           <MediaCard
-            key={i}
             image={p.image}
             title={p.name}
             description={p.shortDescription}
@@ -74,8 +80,10 @@ const Projects = () => {
 }
 
 const Project = styled.div`
-  flex-basis: 33%;
+  flex-basis: 30%;
   margin-top: 10px;
+  margin-right: 10px;
+  flex-grow: 1;
 `
 
 MediaCard.Project = Project
