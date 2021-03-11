@@ -1,0 +1,30 @@
+@tailwind base;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-darkNavy;
+  @apply text-white;
+}
+
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .list-interpunct > li::before {
+    content: '・';
+    display: inline-block;
+    float: left;
+    margin: 0 0 0 -0.9em;
+    width: 0.9em;
+  }
+
+  @media (min-width: 992px) {
+    .list-interpunct > li::before {
+      margin: 0 0 0 -1.5em;
+      width: 1.5em;
+    }
+  }
+}

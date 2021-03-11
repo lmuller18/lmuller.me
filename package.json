@@ -8,8 +8,24 @@
     "start": "next start"
   },
   "dependencies": {
+    "@tailwindcss/aspect-ratio": "^0.2.0",
+    "autoprefixer": "^10.2.4",
+    "clsx": "^1.1.1",
+    "framer-motion": "^3.3.0",
     "next": "10.0.6",
+    "nprogress": "^0.2.0",
+    "postcss": "^8.2.5",
     "react": "17.0.1",
-    "react-dom": "17.0.1"
+    "react-dom": "17.0.1",
+    "react-intersection-observer": "^8.31.0",
+    "react-lottie": "^1.2.3",
+    "react-query": "^3.8.2",
+    "react-responsive-carousel": "^3.2.12",
+    "tailwindcss": "^2.0.3"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.18.0",
+    "eslint-plugin-react": "^7.22.0"
   }
 }
