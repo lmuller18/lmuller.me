@@ -12,7 +12,7 @@ const Hubworld = () => {
         </Link>
         <div className="flex items-center">
           <a
-            href="https://hubworld-lfg.netlify.app/"
+            href="https://hubworld.netlify.app/me"
             target="_blank"
             rel="noopener noreferrer"
             className="underline text-4xl font-bold mr-2"
