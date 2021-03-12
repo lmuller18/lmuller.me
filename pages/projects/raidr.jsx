@@ -20,12 +20,8 @@ const Raidr = () => {
           </Link>
           <h2 className="text-4xl font-bold">Raidr</h2>
         </div>
-        <div className="p-4 md:p-8 lg:p-14 flex justify-center bg-darkNavy-well shadow-elevate mb-4">
-          <img
-            src="/images/raidr/raidr.png"
-            style={{ maxWidth: 200 }}
-            className="items-start"
-          />
+        <div className="p-4 md:p-8 lg:p-14 flex items-start justify-center bg-darkNavy-well shadow-elevate mb-4">
+          <img src="/images/raidr/raidr.png" style={{ maxWidth: 200 }} />
         </div>
         <div>
           <p className="mb-2">
@@ -73,8 +69,8 @@ const Raidr = () => {
             </span>
             <img
               src="/images/raidr/raidr_old.png"
-              className="object-contain items-start"
-              style={{ height: 450 }}
+              className="object-contain"
+              style={{ height: 450, width: 484 }}
             />
           </div>
           <p className="mb-2">

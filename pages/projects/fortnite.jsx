@@ -17,12 +17,8 @@ const Fortnite = () => {
           </Link>
           <h2 className="text-4xl font-bold">Fortnite Viewer</h2>
         </div>
-        <div className="p-4 md:p-8 lg:p-14 flex justify-center bg-darkNavy-well shadow-elevate mb-4">
-          <img
-            src="/images/fortnite/fortnite.png"
-            style={{ maxWidth: 200 }}
-            className="items-start"
-          />
+        <div className="p-4 md:p-8 lg:p-14 flex items-start justify-center bg-darkNavy-well shadow-elevate mb-4">
+          <img src="/images/fortnite/fortnite.png" style={{ maxWidth: 200 }} />
         </div>
         <p className="text-xs opacity-50 mb-4">
           NOTE: Bell Icon not shown on HollowHead because this device did not

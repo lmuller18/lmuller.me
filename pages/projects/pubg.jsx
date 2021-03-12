@@ -29,33 +29,17 @@ const PUBG = () => {
             emulateTouch
             showThumbs={false}
           >
-            <div className="p-4 md:p-8 lg:p-14 flex justify-center bg-darkNavy-well">
-              <img
-                src="/images/pubg/pubg_1.png"
-                style={{ maxWidth: 200 }}
-                className="items-start"
-              />
+            <div className="p-4 md:p-8 lg:p-14 flex items-start justify-center bg-darkNavy-well">
+              <img src="/images/pubg/pubg_1.png" style={{ maxWidth: 200 }} />
             </div>
-            <div className="p-4 md:p-8 lg:p-14 flex justify-center bg-darkNavy-well">
-              <img
-                src="/images/pubg/pubg_2.png"
-                style={{ maxWidth: 200 }}
-                className="items-start"
-              />
+            <div className="p-4 md:p-8 lg:p-14 flex items-start justify-center bg-darkNavy-well">
+              <img src="/images/pubg/pubg_2.png" style={{ maxWidth: 200 }} />
             </div>
-            <div className="p-4 md:p-8 lg:p-14 flex justify-center bg-darkNavy-well">
-              <img
-                src="/images/pubg/pubg_3.png"
-                style={{ maxWidth: 200 }}
-                className="items-start"
-              />
+            <div className="p-4 md:p-8 lg:p-14 flex items-start justify-center bg-darkNavy-well">
+              <img src="/images/pubg/pubg_3.png" style={{ maxWidth: 200 }} />
             </div>
-            <div className="p-4 md:p-8 lg:p-14 flex justify-center bg-darkNavy-well">
-              <img
-                src="/images/pubg/pubg_4.png"
-                style={{ maxWidth: 200 }}
-                className="items-start"
-              />
+            <div className="p-4 md:p-8 lg:p-14 flex items-start justify-center bg-darkNavy-well">
+              <img src="/images/pubg/pubg_4.png" style={{ maxWidth: 200 }} />
             </div>
           </Carousel>
         </div>

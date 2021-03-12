@@ -40,14 +40,14 @@ const BodaBoys = () => {
             </a>
           </div>
         </div>
-        <div className="p-4 md:p-14 lg:p-20 flex justify-center bg-darkNavy-well shadow-elevate mb-4">
+        <div className="p-4 md:p-14 lg:p-20 flex items-start justify-center bg-darkNavy-well shadow-elevate mb-4">
           <img
-            className="block md:hidden items-start"
+            className="block md:hidden"
             style={{ maxWidth: 200 }}
             src="/images/boda/boda_mobile_demo.gif"
           />
           <img
-            className="hidden md:block items-start"
+            className="hidden md:block"
             src="/images/boda/boda_responsive_demo.gif"
           />
         </div>

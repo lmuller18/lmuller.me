@@ -34,14 +34,13 @@ const Hubworld = () => {
             </a>
           </div>
         </div>
-        <div className="p-4 md:p-8 lg:p-14 flex justify-center bg-darkNavy-well shadow-elevate mb-4">
+        <div className="p-4 md:p-8 lg:p-14 flex items-start justify-center bg-darkNavy-well shadow-elevate mb-4">
           <video
             controls
             autoPlay
             muted
             loop
             style={{ maxWidth: 300, height: 600 }}
-            className="items-start"
           >
             <source src="/videos/hubworld/hubworld_demo.mp4" type="video/mp4" />
           </video>

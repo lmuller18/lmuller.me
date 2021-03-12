@@ -34,11 +34,10 @@ const HubworldPulse = () => {
             </a>
           </div>
         </div>
-        <div className="p-4 md:p-8 lg:p-14 flex justify-center bg-darkNavy-well shadow-elevate mb-4">
+        <div className="p-4 md:p-8 lg:p-14 flex items-start justify-center bg-darkNavy-well shadow-elevate mb-4">
           <img
             style={{ maxWidth: 200 }}
             src="/images/hubworld-pulse/hubworld-pulse.png"
-            className="items-start"
           />
         </div>
         <div>
