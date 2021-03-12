@@ -11,10 +11,11 @@ const BodaBoys = () => {
   return (
     <>
       <Head>
+        <title>Liam Muller | Boda Boys</title>
         <script
           async
           src="https://platform.twitter.com/widgets.js"
-          charset="utf-8"
+          charSet="utf-8"
         />
       </Head>
       <section className="max-w-4xl mx-auto p-4">
@@ -41,12 +42,12 @@ const BodaBoys = () => {
         </div>
         <div className="p-4 md:p-14 lg:p-20 flex justify-center bg-darkNavy-well shadow-elevate mb-4">
           <img
-            className="block md:hidden"
+            className="block md:hidden items-start"
             style={{ maxWidth: 200 }}
             src="/images/boda/boda_mobile_demo.gif"
           />
           <img
-            className="hidden md:block"
+            className="hidden md:block items-start"
             src="/images/boda/boda_responsive_demo.gif"
           />
         </div>

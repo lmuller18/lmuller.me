@@ -46,21 +46,27 @@ const HeroSection = () => {
           <ContactLink href="https://linkedin.com/in/liammuller">
             <Muted>linkedin.com/in/</Muted>liammuller
           </ContactLink>
-          <h3 className="ml-2 block sm:hidden text-xs">LinkedIn</h3>
+          <MobileContactLink href="https://linkedin.com/in/liammuller">
+            LinkedIn
+          </MobileContactLink>
         </div>
         <div className="lg:-ml-24 flex items-center w-3/5">
           <GithubIcon h="h-4 sm:h-6" w="w-4 sm:w-6" />
           <ContactLink href="https://github.com/lmuller18">
             <Muted>github.com/</Muted>lmuller18
           </ContactLink>
-          <h3 className="ml-2 block sm:hidden text-xs">GitHub</h3>
+          <MobileContactLink href="https://github.com/lmuller18">
+            GitHub
+          </MobileContactLink>
         </div>
         <div className="lg:-ml-24 flex items-center w-3/5">
           <MailIcon h="h-4 sm:h-6" w="w-4 sm:w-6" />
           <ContactLink href="mailto:liam.w.muller at gmail.com">
             liam.w.muller<Muted> at gmail.com</Muted>
           </ContactLink>
-          <h3 className="ml-2 block sm:hidden text-xs">Email</h3>
+          <MobileContactLink href="mailto:liam.w.muller at gmail.com">
+            Email
+          </MobileContactLink>
         </div>
       </div>
       <div className="col-start-1 row-start-1 max-h-full pointer-events-none">
@@ -90,6 +96,18 @@ const ContactLink = ({ children, href }) => (
     {children}
   </a>
 )
+
+const MobileContactLink = ({ children, href }) => (
+  <a
+    href={href}
+    rel="noopener noreferrer"
+    target="blank"
+    className="ml-2 block sm:hidden text-xs"
+  >
+    {children}
+  </a>
+)
+
 const Muted = ({ children }) => (
   <span className="opacity-75 font-normal">{children}</span>
 )
