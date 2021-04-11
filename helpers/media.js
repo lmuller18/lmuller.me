@@ -19,10 +19,6 @@ export const CLICKED = 'clicked'
 
 export const TMDB_BASE_URL = 'https://image.tmdb.org/t/p'
 
-/**
- * @param {SPOTIFY | TRAKT | STEAM} brand
- * @param {PAST | PRESENT | FUTURE} tense
- */
 export const brandToVerb = (brand, tense) => {
   switch (brand) {
     case SPOTIFY:

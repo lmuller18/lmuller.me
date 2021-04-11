@@ -22,9 +22,19 @@ export const tmdbApi = (url) =>
       return null
     })
 
-export const darkAmazonApi = (url) =>
-  fetch(`${process.env.NEXT_PUBLIC_DARK_AMAZON_BASE_URL}${url}`)
-    .then((res) => res.json())
+export const darkAmazonApi = (url, init) =>
+  fetch(url, init)
+    .then(async (res) => {
+      if (res.status === 202) return null
+      if (!res.ok) {
+        if (res.json) {
+          const { message } = await res.json()
+          throw new Error(message)
+        }
+        throw new Error('Not 2xx repsonse')
+      }
+      return res.json()
+    })
     .catch((e) => {
       console.error(e)
       return null

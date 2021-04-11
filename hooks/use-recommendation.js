@@ -1,7 +1,4 @@
 import { useEffect, useState } from 'react'
-import { useQueries } from 'react-query'
-
-import TraktClient from '@clients/trakt.client'
 import {
   LISTENED,
   SONG,
@@ -11,7 +8,13 @@ import {
   ROLLED,
   CLICKED,
 } from '@helpers/media'
-import { TOP_GAMES, TOP_TRACKS, TOP_VIDEO_GAMES } from '@helpers/mock'
+import {
+  TOP_GAMES,
+  TOP_MOVIES,
+  TOP_SHOWS,
+  TOP_TRACKS,
+  TOP_VIDEO_GAMES,
+} from '@helpers/mock'
 
 const formatWatchedMedia = (media) => ({
   ...media[media.type],
@@ -99,72 +102,30 @@ const getRandomRec = (watched, listened, rolled, clicked, current) => {
 const useRecommendation = () => {
   const [rec, setRec] = useState()
 
-  const [
-    {
-      data: topShows,
-      isLoading: topShowsIsLoading,
-      refetch: refetchTopShows,
-      isFetched: topShowsIsFetched,
-    },
-    {
-      data: topMovies,
-      isLoading: topMoviesIsLoading,
-      refetch: refetchTopMovies,
-      isFetched: topMoviesIsFetched,
-    },
-  ] = useQueries([
-    { queryKey: 'top-shows', queryFn: TraktClient.getTopShows, enabled: false },
-    {
-      queryKey: 'top-movies',
-      queryFn: TraktClient.getTopMovies,
-      enabled: false,
-    },
-  ])
-
   const getRecommendation = () => {
-    if (!topMovies && !topShows && !topShowsIsLoading && !topMoviesIsLoading) {
-      refetchTopMovies()
-      refetchTopShows()
-    } else {
-      const randRec = getRandomRec(
-        [...(topMovies ?? []), ...(topShows ?? [])],
-        TOP_TRACKS.items,
-        TOP_GAMES,
-        TOP_VIDEO_GAMES,
-        rec
-      )
-      setRec(randRec)
-    }
+    const randRec = getRandomRec(
+      [...TOP_MOVIES, ...TOP_SHOWS],
+      TOP_TRACKS.items,
+      TOP_GAMES,
+      TOP_VIDEO_GAMES,
+      rec
+    )
+    setRec(randRec)
   }
 
   useEffect(() => {
-    if (
-      topShowsIsLoading ||
-      topMoviesIsLoading ||
-      !topShowsIsFetched ||
-      !topMoviesIsFetched
-    )
-      return
     const rec = getRandomRec(
-      [...(topMovies ?? []), ...(topShows ?? [])],
+      [...TOP_MOVIES, ...TOP_SHOWS],
       TOP_TRACKS.items,
       TOP_GAMES,
       TOP_VIDEO_GAMES
     )
     setRec(rec)
-  }, [
-    topShows,
-    topMoviesIsLoading,
-    topMovies,
-    topMoviesIsLoading,
-    topShowsIsFetched,
-    topMoviesIsFetched,
-  ])
+  }, [])
 
   return [
     rec,
     {
-      isLoading: topMoviesIsLoading || topShowsIsLoading,
       getRecommendation,
     },
   ]

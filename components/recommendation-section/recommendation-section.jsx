@@ -11,7 +11,7 @@ import { LISTENED, WATCHED, ROLLED, CLICKED } from '@helpers/media'
 import Link from 'next/link'
 
 const RecommendationSection = () => {
-  const [recommendation, { isLoading, getRecommendation }] = useRecommendation()
+  const [recommendation, { getRecommendation }] = useRecommendation()
   const [showRecs, setShowRecs] = useState(false)
 
   const showRecBanner = () => {
@@ -60,7 +60,7 @@ const RecommendationSection = () => {
         </button>
       </div>
       {showRecs && recommendation?.mediaType === WATCHED && (
-        <WatchCard isLoading={isLoading} media={recommendation} />
+        <WatchCard media={recommendation} />
       )}
       {showRecs && recommendation?.mediaType === LISTENED && (
         <ListenCard media={recommendation} />

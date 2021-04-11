@@ -4492,3 +4492,173 @@ export const TOP_VIDEO_GAMES = [
     link: 'https://www.igdb.com/games/valheim',
   },
 ]
+
+export const TOP_MOVIES = [
+  {
+    rated_at: '2020-08-28T21:12:45.000Z',
+    rating: 10,
+    type: 'movie',
+    movie: {
+      title: 'Drive',
+      year: 2011,
+      ids: {
+        trakt: 46736,
+        slug: 'drive-2011',
+        imdb: 'tt0780504',
+        tmdb: 64690,
+      },
+    },
+  },
+  {
+    rated_at: '2017-08-19T00:10:38.000Z',
+    rating: 10,
+    type: 'movie',
+    movie: {
+      title: 'Bo Burnham: Make Happy',
+      year: 2016,
+      ids: {
+        trakt: 243697,
+        slug: 'bo-burnham-make-happy-2016',
+        imdb: 'tt5192124',
+        tmdb: 400608,
+      },
+    },
+  },
+  {
+    rated_at: '2017-08-09T21:48:22.000Z',
+    rating: 10,
+    type: 'movie',
+    movie: {
+      title: 'Ex Machina',
+      year: 2015,
+      ids: {
+        trakt: 163375,
+        slug: 'ex-machina-2015',
+        imdb: 'tt0470752',
+        tmdb: 264660,
+      },
+    },
+  },
+]
+
+export const TOP_SHOWS = [
+  {
+    rated_at: '2021-03-28T02:32:07.000Z',
+    rating: 10,
+    type: 'show',
+    show: {
+      title: 'The Mandalorian',
+      year: 2019,
+      ids: {
+        trakt: 137178,
+        slug: 'the-mandalorian',
+        tvdb: 361753,
+        imdb: 'tt8111088',
+        tmdb: 82856,
+        tvrage: null,
+      },
+    },
+  },
+  {
+    rated_at: '2018-08-18T02:32:28.000Z',
+    rating: 10,
+    type: 'show',
+    show: {
+      title: 'My Hero Academia',
+      year: 2016,
+      ids: {
+        trakt: 104311,
+        slug: 'my-hero-academia',
+        tvdb: 305074,
+        imdb: 'tt5626028',
+        tmdb: 65930,
+        tvrage: null,
+      },
+    },
+  },
+  {
+    rated_at: '2017-10-05T02:28:21.000Z',
+    rating: 10,
+    type: 'show',
+    show: {
+      title: 'Hunter x Hunter',
+      year: 2011,
+      ids: {
+        trakt: 64409,
+        slug: 'hunter-x-hunter-2011',
+        tvdb: 252322,
+        imdb: 'tt2098220',
+        tmdb: 46298,
+        tvrage: null,
+      },
+    },
+  },
+  {
+    rated_at: '2017-09-11T01:23:27.000Z',
+    rating: 10,
+    type: 'show',
+    show: {
+      title: 'Gravity Falls',
+      year: 2012,
+      ids: {
+        trakt: 39892,
+        slug: 'gravity-falls',
+        tvdb: 259972,
+        imdb: 'tt1865718',
+        tmdb: 40075,
+        tvrage: 31839,
+      },
+    },
+  },
+  {
+    rated_at: '2017-08-11T02:12:29.000Z',
+    rating: 10,
+    type: 'show',
+    show: {
+      title: 'Fullmetal Alchemist: Brotherhood',
+      year: 2009,
+      ids: {
+        trakt: 31771,
+        slug: 'fullmetal-alchemist-brotherhood',
+        tvdb: 85249,
+        imdb: 'tt1355642',
+        tmdb: 31911,
+        tvrage: null,
+      },
+    },
+  },
+  {
+    rated_at: '2017-08-09T21:46:49.000Z',
+    rating: 10,
+    type: 'show',
+    show: {
+      title: 'Psych',
+      year: 2006,
+      ids: {
+        trakt: 1438,
+        slug: 'psych',
+        tvdb: 79335,
+        imdb: 'tt0491738',
+        tmdb: 1447,
+        tvrage: 8322,
+      },
+    },
+  },
+  {
+    rated_at: '2017-08-09T21:45:50.000Z',
+    rating: 10,
+    type: 'show',
+    show: {
+      title: 'Scrubs',
+      year: 2001,
+      ids: {
+        trakt: 4532,
+        slug: 'scrubs',
+        tvdb: 76156,
+        imdb: 'tt0285403',
+        tmdb: 4556,
+        tvrage: 0,
+      },
+    },
+  },
+]

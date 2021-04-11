@@ -84,6 +84,22 @@ const PersonalSection = () => (
     </h3>
     <ProjectGrid>
       <ProjectCard
+        title="Untitled"
+        img="/images/upsource.png"
+        link={getLink('/projects/upsource', false)}
+        date="2021"
+        description={() => (
+          <>
+            A place for people to consolidate their media recommendations. This
+            project was based off of the{' '}
+            <Link href="#personal">
+              <a className="underline font-bold">recommendation section</a>
+            </Link>{' '}
+            above and the Now Playing popup.
+          </>
+        )}
+      />
+      <ProjectCard
         title="Hubworld"
         img="/images/hubworld.svg"
         link={getLink('/projects/hubworld', false)}

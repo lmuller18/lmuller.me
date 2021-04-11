@@ -24,7 +24,7 @@ const WatchCard = ({ media, isLoading }) => {
         }}
       >
         <div
-          className="absolute  inset-0 w-full h-full"
+          className="absolute inset-0 w-full h-full"
           style={{
             background: 'linear-gradient(0deg, #00000088 30%, #ffffff44 100%)',
           }}

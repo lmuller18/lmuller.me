@@ -9,7 +9,8 @@
       "@clients/*": ["clients/*"],
       "@context/*": ["context/*"],
       "@helpers/*": ["helpers/*"],
-      "@components/*": ["components/*"]
+      "@components/*": ["components/*"],
+      "@api/*": ["api/*"]
     }
   },
   "exclude": ["node_modules", ".next", "out"]
