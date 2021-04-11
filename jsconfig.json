@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "jsx": "react",
+    "moduleResolution": "node",
+    "paths": {
+      "@hooks/*": ["hooks/*"],
+      "@pages/*": ["pages/*"],
+      "@clients/*": ["clients/*"],
+      "@context/*": ["context/*"],
+      "@helpers/*": ["helpers/*"],
+      "@components/*": ["components/*"],
+      "@api/*": ["api/*"]
+    }
+  },
+  "exclude": ["node_modules", ".next", "out"]
+}
