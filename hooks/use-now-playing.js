@@ -7,8 +7,8 @@ import DarkAmazonClient from '@clients/dark-amazon.client'
 import { TRAKT } from '@helpers/media'
 
 // quick toggle to prevent calling api's every 10s
-const REFRESH = process.env.NODE_ENV === 'development' ? false : true
-const ENABLED = process.env.NODE_ENV === 'development' ? false : true
+const REFRESH = process.env.NODE_ENV === 'development' ? true : true
+const ENABLED = process.env.NODE_ENV === 'development' ? true : true
 
 const useNowPlaying = () => {
   const [nowPlaying, setNowPlaying] = useState({
