@@ -8,10 +8,11 @@ const getLink = (href, external = true) => ({ href, external })
 
 const ProjectSection = () => (
   <section>
-    <Anchor id="projects" />
-    <h1 className="text-4xl text-center mb-4">Experience</h1>
     <div className="h-px border-b border-coolGray-100 mx-auto w-2/3 my-8" />
     <PersonalSection />
+    <div className="h-px my-8" />
+    <Anchor id="projects" />
+    <h1 className="text-4xl text-center mb-4">Experience</h1>
     <div className="h-px border-b border-coolGray-100 mx-auto w-2/3 my-8" />
     <ChewySection />
     <div className="h-px border-b border-coolGray-100 mx-auto w-2/3 my-8" />
