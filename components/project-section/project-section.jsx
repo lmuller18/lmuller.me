@@ -55,7 +55,7 @@ const ChewySection = () => (
         title="Pet Health"
         img="/images/chewy-full.png"
         imgClass="bg-white p-4"
-        role="Software Engineer II"
+        role="Software Engineer III"
         link={getLink('https://www.chewy.com/')}
         description="Helping to create more accessible, standardized, and cheaper medicine for pets."
       />
