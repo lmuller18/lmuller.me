@@ -1,5 +1,3 @@
-import fetch from 'cross-fetch'
-
 export const traktApi = (url) =>
   fetch(`${process.env.NEXT_PUBLIC_TRAKT_BASE_URL}${url}`, {
     headers: {
