@@ -114,6 +114,28 @@ const PersonalSection = () => (
     </h3>
     <ProjectGrid>
       <ProjectCard
+        title="Magi"
+        img="/images/darkamazon.svg"
+        link={getLink('https://magi-teal.vercel.app/')}
+        date="2024"
+        description="A web app to track and manage gifts for friends and family birthday and Christmas. Built to work offline and local first, this project uses dexie.js and service workers to cache data and work offline."
+      />
+      <ProjectCard
+        title="Pokedoku Trainer"
+        img="/images/pokedoku-trainer.png"
+        link={getLink('https://pokedoku-trainer-nine.vercel.app')}
+        date="2024"
+        description={() => (
+          <>
+            A fun quiz game to test your knowledge of Pokemon types. Inspired by{' '}
+            <a className="underline font-bold" href="https://www.pokedoku.com">
+              pokedokue.com
+            </a>
+            , this project trains you to be ready for your next puzzle.
+          </>
+        )}
+      />
+      <ProjectCard
         title="Palanaeum"
         img="/images/palanaeum.png"
         link={getLink('/projects/palanaeum', false)}
