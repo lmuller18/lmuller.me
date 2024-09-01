@@ -115,7 +115,7 @@ const PersonalSection = () => (
     <ProjectGrid>
       <ProjectCard
         title="Magi"
-        img="/images/darkamazon.svg"
+        img="/images/magi.png"
         link={getLink('https://magi-teal.vercel.app/')}
         date="2024"
         description="A web app to track and manage gifts for friends and family birthday and Christmas. Built to work offline and local first, this project uses dexie.js and service workers to cache data and work offline."
@@ -123,6 +123,7 @@ const PersonalSection = () => (
       <ProjectCard
         title="Pokedoku Trainer"
         img="/images/pokedoku-trainer.png"
+        imgClass="bg-white"
         link={getLink('https://pokedoku-trainer-nine.vercel.app')}
         date="2024"
         description={() => (
