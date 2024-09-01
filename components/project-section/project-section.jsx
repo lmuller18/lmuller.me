@@ -130,7 +130,7 @@ const PersonalSection = () => (
           <>
             A fun quiz game to test your knowledge of Pokemon types. Inspired by{' '}
             <a className="underline font-bold" href="https://www.pokedoku.com">
-              pokedokue.com
+              pokedoku.com
             </a>
             , this project trains you to be ready for your next puzzle.
           </>
